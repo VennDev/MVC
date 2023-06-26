@@ -1,0 +1,53 @@
+﻿@{
+    if (Session["login"] == null)
+    {
+        Response.Redirect("Login/Login");
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Điện Hoa</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://kit.fontawesome.com/daf7b3ddef.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/daf7b3ddef.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: mediumseagreen>
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src='@Url.Content("~/Images/Icon.png")' width="20%" height="20%" style="margin-left: 25%; border-radius: 5%; margin-top: 1%"/></a>
+            </div>
+            <div class="navbar-collapse collapse" style="color: whitesmoke; font-size: 150%">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Loại Hàng Hóa", "Index", "LoaiHangHoa")</li>
+                    <li>@Html.ActionLink("Phiếu Cung Ứng", "Index", "PhieuCungUng")</li>
+                    <li>@Html.ActionLink("Khả Năng", "Index", "KhaNang")</li>
+                    <li>@Html.ActionLink("Chi Tiết Cung Ứng", "Index", "ChiTietCungUng")</li>
+                    <li>@Html.ActionLink("Hàng Hóa", "Index", "HangHoa")</li>
+                    <li>@Html.ActionLink("Nhà Cung Cấp", "Index", "NhaCungCap")</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
+                </ul>
+            </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

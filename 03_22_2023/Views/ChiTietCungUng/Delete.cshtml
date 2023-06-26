@@ -1,0 +1,78 @@
+﻿@model _03_22_2023.Models.chi_tiet_cung_ung
+
+@{
+    ViewBag.Title = "Chi Tiết Cung Ứng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    span {
+        display: block;
+    }
+    
+    #text-box {
+        width: 70%;
+        height: auto;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 17%;
+    }
+    
+    #text-box span {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #text-box .body {
+        margin-top: 10px;
+    }
+    
+    #text-box .title {
+        font-weight: bold;
+        font-size: 35px;
+    }
+    
+    #text-box .sub-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 40%;
+    }
+    
+    #text-box .content {
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-left: 45%;
+    }
+    
+    #text-box img {
+        width: 200px;
+        height: 200px;
+        border: #2b2b2b 1px solid;
+        margin-bottom: 30px;
+        margin-left: 40%;
+    }
+    
+    #text-box .button {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+</style>
+<div id="text-box">
+    <span class="title">Chi Tiết</span>
+    <div class="body">
+        <span class="sub-title">Số Phiếu:</span>
+        <span class="content">@Model.so_phieu</span>
+        <span class="sub-title">Mã Loại Loại Hàng Hóa:</span>
+        <span class="content">@Model.ma_hang_hoa</span>
+        <span class="sub-title">Số Lượng:</span>
+        <span class="content">@Model.so_luong</span>
+        <span class="sub-title">Thành Tiền:</span>
+        <span class="content">@Model.thanh_tien</span>
+    </div>
+    <i style="margin-left: 42%; position: absolute">@Html.ActionLink("Xóa", "DeleteAc", "ChiTietCungUng", new { so_phieu = Model.so_phieu }, new { ma_hang_hoa = Model.ma_hang_hoa, @class = "button-back"})</i>
+    <i style="margin-left: 87%">@Html.ActionLink("Quay Lại", "Index", "ChiTietCungUng", new { @class = "button-back" })</i>
+</div>
+

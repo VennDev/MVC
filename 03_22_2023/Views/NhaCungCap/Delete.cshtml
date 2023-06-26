@@ -1,0 +1,84 @@
+﻿@model _03_22_2023.Models.nha_cung_cap
+
+@{
+    ViewBag.Title = "Chi Tiết Nhà Cung Cấp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    span {
+        display: block;
+    }
+    
+    #text-box {
+        width: 70%;
+        height: auto;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 17%;
+    }
+    
+    #text-box span {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #text-box .body {
+        margin-top: 10px;
+    }
+    
+    #text-box .title {
+        font-weight: bold;
+        font-size: 35px;
+    }
+    
+    #text-box .sub-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 40%;
+    }
+    
+    #text-box .content {
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-left: 45%;
+    }
+    
+    #text-box img {
+        width: 200px;
+        height: 200px;
+        border: #2b2b2b 1px solid;
+        margin-bottom: 30px;
+        margin-left: 40%;
+    }
+    
+    #text-box .button {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+</style>
+<div id="text-box">
+    <span class="title">Chi Tiết</span>
+    <div class="body">
+        <span class="sub-title">Mã Nhà Cung Cấp:</span>
+        <span class="content">@Model.ma_nha_cung_cap</span>
+        <span class="sub-title">Tên Nhà Cung Cấp:</span>
+        <span class="content">@Model.ten_nha_cung_cap</span>
+        <span class="sub-title">Địa Chỉ:</span>
+        <span class="content">@Model.dia_chi</span>
+        <span class="sub-title">Số Điện Thoại:</span>
+        <span class="content">@Model.dien_thoai</span>
+        <span class="sub-title">Mã Tài Khoản:</span>
+        <span class="content">@Model.ma_tai_khoan</span>
+        <span class="sub-title">Khu Vực:</span>
+        <span class="content">@Model.khu_vuc</span>
+        <span class="sub-title">Ghi Chú:</span>
+        <span class="content">@Model.ghi_chu</span>
+    </div>
+    <i style="margin-left: 42%; position: absolute">@Html.ActionLink("Xóa", "DeleteAc", "NhaCungCap", new { ma_nha_cung_cap = Model.ma_nha_cung_cap}, new { @class = "button-back"})</i>
+    <i style="margin-left: 87%">@Html.ActionLink("Quay Lại", "Index", "NhaCungCap", new { @class = "button-back" })</i>
+</div>
+

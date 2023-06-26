@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4bb6af8343604f6d9aefbcd0532df0f5" Name="Diagram1">
+        <EntityTypeShape EntityType="DienHoaModel.chi_tiet_cung_ung" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienHoaModel.hang_hoa" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienHoaModel.kha_nang" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienHoaModel.loai_hang_hoa" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienHoaModel.nha_cung_cap" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienHoaModel.phieu_cung_ung" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="DienHoaModel.FK__chi_tiet___ma_ha__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="DienHoaModel.FK__chi_tiet___so_ph__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="DienHoaModel.FK__hang_hoa__ma_han__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="DienHoaModel.FK__kha_nang__ma_loa__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="DienHoaModel.FK__kha_nang__ma_nha__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="DienHoaModel.FK__phieu_cun__ma_nh__1B0907CE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

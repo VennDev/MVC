@@ -1,0 +1,79 @@
+﻿@model _03_22_2023.Models.hang_hoa
+
+@{
+    ViewBag.Title = "Thêm Hàng Hóa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "HangHoa", FormMethod.Post))
+{
+    <div id="form-container">
+        <i>@Html.ActionLink("Quay Lại", "Index", "HangHoa", new { @class = "button-back" })</i>
+        <div class="title"><span>Thêm Hàng Hóa</span></div>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Hàng Hóa (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_hang_hoa)
+                @Html.ValidationMessageFor(model => model.ma_hang_hoa)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Tên Loại Hàng Hóa (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ten_hang_hoa)
+                @Html.ValidationMessageFor(model => model.ten_hang_hoa)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Quy Cách (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.quy_cach)
+                @Html.ValidationMessageFor(model => model.quy_cach)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Đơn Vị Tính (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.don_vi_tinh)
+                @Html.ValidationMessageFor(model => model.don_vi_tinh)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Đơn Giá (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.don_gia)
+                @Html.ValidationMessageFor(model => model.don_gia)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Loại Hàng Hóa (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_loai_hang_hoa)
+                @Html.ValidationMessageFor(model => model.ma_loai_hang_hoa)
+            </div>
+        </div>
+        
+        <div class="input">
+            <input type="submit" value="Lưu" />
+        </div>
+    </div>
+}
+

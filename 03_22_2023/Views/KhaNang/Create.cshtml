@@ -1,0 +1,49 @@
+﻿@model _03_22_2023.Models.kha_nang
+
+@{
+    ViewBag.Title = "Thêm Khả Năng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "KhaNang", FormMethod.Post))
+{
+    <div id="form-container">
+        <i>@Html.ActionLink("Quay Lại", "Index", "KhaNang", new { @class = "button-back" })</i>
+        <div class="title"><span>Thêm Khả Năng</span></div>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Nhà Cung Cấp (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_nha_cung_cap)
+                @Html.ValidationMessageFor(model => model.ma_nha_cung_cap)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Loại Hàng Hóa (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_loai_hang_hoa)
+                @Html.ValidationMessageFor(model => model.ma_loai_hang_hoa)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="span">
+                <span>Ghi Chú</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ghi_chu)
+                @Html.ValidationMessageFor(model => model.ghi_chu)
+            </div>
+        </div>
+        
+        <div class="input">
+            <input type="submit" value="Lưu" />
+        </div>
+    </div>
+}
+

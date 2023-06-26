@@ -1,0 +1,326 @@
+﻿@model _03_22_2023.Models.phieu_cung_ung
+
+@{
+    ViewBag.Title = "Thêm Phiếu Cung Ứng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "PhieuCungUng", FormMethod.Post))
+{
+    <style>
+        form .input input[type="text"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="text"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="text"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="date"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="date"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="date"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type=datetime-local] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type=datetime-local]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type=datetime-local]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="time"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="time"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="time"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="number"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="number"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="number"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="week"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="week"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="week"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="month"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="month"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="month"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="color"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="color"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="color"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="email"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="email"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="email"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="password"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="password"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="password"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="search"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="search"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="search"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="tel"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="tel"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="tel"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="url"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="url"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="url"]::placeholder {
+            font-size: 120%;
+        }
+        
+        form .input input[type="datetime"] {
+            width: 70%;
+            height: 40px;
+            margin-top: 20px;
+            margin-left: 25%;
+            outline: none;
+            border: darkgray 1px solid;
+            box-shadow: 0 4px 2px -2px gray;
+            border-radius: 5px;
+        }
+        
+        form .input input[type="datetime"]:focus {
+            border: 2px solid mediumseagreen;
+        }
+        
+        form .input input[type="datetime"]::placeholder {
+            font-size: 120%;
+        }
+    </style>
+    <div id="form-container">
+        <i>@Html.ActionLink("Quay Lại", "Index", "PhieuCungUng", new { @class = "button-back" })</i>
+        <div class="title"><span>Thêm Phiếu Cung Ứng</span></div>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="span">
+                <span>Số Phiếu (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.so_phieu)
+                @Html.ValidationMessageFor(model => model.so_phieu)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Ngày Thành Lập (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ngay_thanh_lap)
+                @Html.ValidationMessageFor(model => model.ngay_thanh_lap)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Trị Giá Phiếu (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.tri_gia_phieu)
+                @Html.ValidationMessageFor(model => model.tri_gia_phieu)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Nhà Cung Cấp (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_nha_cung_cap)
+                @Html.ValidationMessageFor(model => model.ma_nha_cung_cap)
+            </div>
+        </div>
+
+        <div class="input">
+            <input type="submit" value="Lưu" />
+        </div>
+    </div>
+}
+

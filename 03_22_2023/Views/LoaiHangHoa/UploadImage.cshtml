@@ -1,0 +1,38 @@
+﻿@model _03_22_2023.Models.loai_hang_hoa
+
+@{
+    ViewBag.Title = "Tải ảnh lên server";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .custom-file-input {
+        /* Các thuộc tính CSS của bạn */
+        /* Ví dụ: */
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        margin-left: 25%;
+    }
+</style>
+
+@using (Html.BeginForm("UploadImage", "LoaiHangHoa", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div id="form-container">
+        <i>@Html.ActionLink("Quay Lại", "Index", "LoaiHangHoa", new { @class = "button-back" })</i>
+        <div class="title"><span>Hãy chọn file ảnh mà bạn cần up!</span></div>
+        <div class="form-group">
+            <div class="span">
+                <span>Chọn file ảnh (*)</span>
+            </div><br><br>
+            
+            <div class="input">
+                <input type="file" name="file" class="custom-file-input" />
+            </div>
+        
+            <div class="input">
+                <input type="submit" value="Upload" />
+            </div>
+        </div>
+    </div>
+}

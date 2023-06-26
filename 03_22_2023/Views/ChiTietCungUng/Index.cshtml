@@ -1,0 +1,133 @@
+﻿@model PagedList.IPagedList<_03_22_2023.Models.chi_tiet_cung_ung>
+
+@{
+    ViewBag.Title = "Trang Chi Tiết Cung Ứng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+<style>
+    #table-container {
+        width: 70%;
+        height: 55%;
+        border-radius: 1%;
+        overflow: hidden;
+        border: none;
+        margin-left: -3%;
+        margin-top: 3%;
+    }
+    
+    #table-container table {
+        width: 100%;
+        font-size: 150%;
+        text-align: center;
+        border: none;
+        margin-top: 13px;
+    }
+    
+    #table-container table thead {
+        background-color: #2b2b2b;
+        color: white;
+    }
+    
+    #table-container .button a {
+        background-color: mediumseagreen;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 200%;
+        text-align: center;
+        width: 100px;
+        height: 45px;
+    }
+    
+    #table-container table thead tr th {
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    #table-container table tbody tr td {
+        padding: 10px 0;
+    }
+    
+    #table-container table tbody tr td:hover {
+        background-color: grey;
+    }
+    
+    #table-container table tbody tr:nth-child(odd) {
+        background-color: whitesmoke;
+    }
+    
+    #table-container table tbody tr:nth-child(even) {
+        background-color: lightgray;
+    }
+    
+    #table-container table, th, td {
+        border: 1px solid whitesmoke;
+    }
+    
+    #table-container table tbody tr td a {
+        background-color: mediumseagreen;
+        color: white;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    
+    #table-container .search {
+        width: 100%;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        padding: 5px 10px;
+        font-size: 150%;
+        margin-left: 15%;
+    }
+</style>
+
+<div id="table-container">
+    <div class="button">
+        <a href='@Url.Action("Create", "ChiTietCungUng", new { Model })'>Thêm</a>
+    </div>
+    <div class="search">
+        @using (Html.BeginForm("Index", "ChiTietCungUng", FormMethod.Get))
+        {
+            <input type="text" name="search" placeholder="Tìm kiếm theo Mã Hàng Hóa" />
+            <input type="submit" value="Tìm kiếm" />
+        }
+    </div>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Số Phiếu</th>
+            <th>Mã Loại Hàng Hóa</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.so_phieu</td>
+                <td>@item.ma_hang_hoa</td>
+                <td>@item.so_luong</td>
+                <td>@item.thanh_tien</td>
+                <td><a href='@Url.Action("Edit", "ChiTietCungUng", new { so_phieu = item.so_phieu, ma_hang_hoa = item.ma_hang_hoa })'>Sửa</a></td>
+                <td><a style="background-color: #2e6da4" href='@Url.Action("Details", "ChiTietCungUng", new { so_phieu = item.so_phieu, ma_hang_hoa = item.ma_hang_hoa })'>Chi Tiết</a></td>
+                <td><a style="background-color: #ac2925" href='@Url.Action("Delete", "ChiTietCungUng", new { so_phieu = item.so_phieu, ma_hang_hoa = item.ma_hang_hoa })'>Xóa</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <div style="margin-left: 50%; align-content: flex-end; justify-content: flex-end">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
+</div>
+

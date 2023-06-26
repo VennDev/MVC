@@ -1,0 +1,76 @@
+﻿@model _03_22_2023.Models.kha_nang
+
+@{
+    ViewBag.Title = "Chi Tiết Khả Năng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    span {
+        display: block;
+    }
+    
+    #text-box {
+        width: 70%;
+        height: auto;
+        border: 1px solid black;
+        padding: 10px;
+        margin-top: 35px;
+        margin-left: 17%;
+    }
+    
+    #text-box span {
+        display: inline-block;
+        width: 100%;
+    }
+    
+    #text-box .body {
+        margin-top: 10px;
+    }
+    
+    #text-box .title {
+        font-weight: bold;
+        font-size: 35px;
+    }
+    
+    #text-box .sub-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 40%;
+    }
+    
+    #text-box .content {
+        font-size: 16px;
+        margin-bottom: 10px;
+        margin-left: 45%;
+    }
+    
+    #text-box img {
+        width: 200px;
+        height: 200px;
+        border: #2b2b2b 1px solid;
+        margin-bottom: 30px;
+        margin-left: 40%;
+    }
+    
+    #text-box .button {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+</style>
+<div id="text-box">
+    <span class="title">Chi Tiết</span>
+    <div class="body">
+        <span class="sub-title">Mã Nhà Cung Cấp:</span>
+        <span class="content">@Model.ma_nha_cung_cap</span>
+        <span class="sub-title">Mã Loại Loại Hàng Hóa:</span>
+        <span class="content">@Model.ma_loai_hang_hoa</span>
+        <span class="sub-title">Ghi Chú:</span>
+        <span class="content">@Model.ghi_chu</span>
+    </div>
+    <i style="margin-left: 42%; position: absolute">@Html.ActionLink("Xóa", "DeleteAc", "KhaNang", new { ma_nha_cung_cap = Model.ma_nha_cung_cap}, new { ma_loai_hang_hoa = Model.ma_loai_hang_hoa, @class = "button-back"})</i>
+    <i style="margin-left: 87%">@Html.ActionLink("Quay Lại", "Index", "KhaNang", new { @class = "button-back" })</i>
+</div>
+

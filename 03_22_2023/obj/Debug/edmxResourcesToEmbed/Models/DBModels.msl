@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DienHoaModelStoreContainer" CdmEntityContainer="DBModel">
+    <EntitySetMapping Name="chi_tiet_cung_ung">
+      <EntityTypeMapping TypeName="DienHoaModel.chi_tiet_cung_ung">
+        <MappingFragment StoreEntitySet="chi_tiet_cung_ung">
+          <ScalarProperty Name="so_phieu" ColumnName="so_phieu" />
+          <ScalarProperty Name="ma_hang_hoa" ColumnName="ma_hang_hoa" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hang_hoa">
+      <EntityTypeMapping TypeName="DienHoaModel.hang_hoa">
+        <MappingFragment StoreEntitySet="hang_hoa">
+          <ScalarProperty Name="ma_hang_hoa" ColumnName="ma_hang_hoa" />
+          <ScalarProperty Name="ten_hang_hoa" ColumnName="ten_hang_hoa" />
+          <ScalarProperty Name="quy_cach" ColumnName="quy_cach" />
+          <ScalarProperty Name="don_vi_tinh" ColumnName="don_vi_tinh" />
+          <ScalarProperty Name="don_gia" ColumnName="don_gia" />
+          <ScalarProperty Name="ma_loai_hang_hoa" ColumnName="ma_loai_hang_hoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kha_nang">
+      <EntityTypeMapping TypeName="DienHoaModel.kha_nang">
+        <MappingFragment StoreEntitySet="kha_nang">
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+          <ScalarProperty Name="ma_loai_hang_hoa" ColumnName="ma_loai_hang_hoa" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_hang_hoa">
+      <EntityTypeMapping TypeName="DienHoaModel.loai_hang_hoa">
+        <MappingFragment StoreEntitySet="loai_hang_hoa">
+          <ScalarProperty Name="ma_loai_hang_hoa" ColumnName="ma_loai_hang_hoa" />
+          <ScalarProperty Name="ten_loai_hang_hoa" ColumnName="ten_loai_hang_hoa" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nha_cung_cap">
+      <EntityTypeMapping TypeName="DienHoaModel.nha_cung_cap">
+        <MappingFragment StoreEntitySet="nha_cung_cap">
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+          <ScalarProperty Name="ten_nha_cung_cap" ColumnName="ten_nha_cung_cap" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="dien_thoai" ColumnName="dien_thoai" />
+          <ScalarProperty Name="ma_tai_khoan" ColumnName="ma_tai_khoan" />
+          <ScalarProperty Name="khu_vuc" ColumnName="khu_vuc" />
+          <ScalarProperty Name="ghi_chu" ColumnName="ghi_chu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phieu_cung_ung">
+      <EntityTypeMapping TypeName="DienHoaModel.phieu_cung_ung">
+        <MappingFragment StoreEntitySet="phieu_cung_ung">
+          <ScalarProperty Name="so_phieu" ColumnName="so_phieu" />
+          <ScalarProperty Name="ngay_thanh_lap" ColumnName="ngay_thanh_lap" />
+          <ScalarProperty Name="tri_gia_phieu" ColumnName="tri_gia_phieu" />
+          <ScalarProperty Name="ma_nha_cung_cap" ColumnName="ma_nha_cung_cap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,40 @@
+﻿@model _03_22_2023.Models.user
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/_LayoutAccount.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div id="form-container">
+        <div class="title"><span>Đăng Nhập</span></div>
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <div class="span">
+                <span>Tên Đăng Nhập (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.user_name_dh)
+                @Html.ValidationMessageFor(model => model.user_name_dh)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="span">
+                <span>Mật Khẩu (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.password)
+                @Html.ValidationMessageFor(model => model.password)
+            </div>
+        </div>
+
+        <div class="input">
+            <input type="submit" value="Đăng Nhập" />
+        </div>
+    </div>
+}
+
+
+

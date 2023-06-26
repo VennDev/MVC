@@ -1,0 +1,51 @@
+﻿@model _03_22_2023.Models.chi_tiet_cung_ung
+
+@{
+    ViewBag.Title = "Chỉnh Sửa Khả Năng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "ChiTietCungUng", FormMethod.Post))
+{
+    <div id="form-container">
+        <i>@Html.ActionLink("Quay Lại", "Index", "ChiTietCungUng", new { @class = "button-back" })</i>
+        <div class="title"><span>Chi Tiết Cung Ứng</span></div>
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.so_phieu)
+
+        <div class="form-group">
+            <div class="span">
+                <span>Mã Loại Hàng Hóa (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.ma_hang_hoa)
+                @Html.ValidationMessageFor(model => model.ma_hang_hoa)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Số Lượng (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.so_luong)
+                @Html.ValidationMessageFor(model => model.so_luong)
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="span">
+                <span>Thành Tiền (*)</span>
+            </div>
+            <div class="input">
+                @Html.EditorFor(model => model.thanh_tien)
+                @Html.ValidationMessageFor(model => model.thanh_tien)
+            </div>
+        </div>
+
+        <div class="input">
+            <input type="submit" value="Lưu" />
+        </div>
+    </div>
+}
+
